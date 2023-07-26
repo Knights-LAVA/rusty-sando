@@ -23,14 +23,14 @@ interface IUSDT {
 /// @notice Test suite for the huff sando contract
 contract SandoTest is Test {
     // wallet associated with private key 0x1
-    address constant searcher = 0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf;
+    address constant searcher = 0x22505ae1c8A0fd9fa7968d49fde27eE6475Be007;
     WETH weth = WETH(payable(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2));
     uint256 wethFundAmount = 100 ether;
     address sando;
 
     function setUp() public {
         // change this if ur node isn't hosted on localhost:8545
-        vm.createSelectFork("http://localhost:8545", 17401879);
+        vm.createSelectFork("http://172.31.3.140:8888", 17401879);
         sando = HuffDeployer.deploy("sando");
 
         // fund sando
